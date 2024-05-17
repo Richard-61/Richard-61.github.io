@@ -24,7 +24,7 @@
         text-decoration: none;
     }
     span {
-        color: #2e2d28; /* 修改为稍深的颜色以突出显示时间 */
+        color: #831241; /* 修改为稍深的颜色以突出显示时间 */
         font-size: 1.2em;
     }
     canvas {
@@ -42,11 +42,12 @@
         const ctx = canvas.getContext('2d');
         let hearts = [];
 
-        function Heart() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
+        function Heart(angle) {
+            const position = calculateHeartPosition(angle);
+            this.x = position.x;
+            this.y = position.y;
             this.opacity = Math.random() * 0.5 + 0.5;
-            this.scale = Math.random() * 20 + 10;
+            this.scale = Math.random() * 5 + 5; // smaller hearts
             this.color = 'rgba(221, 46, 68,' + this.opacity + ')';
         }
 
@@ -62,24 +63,31 @@
             ctx.fill();
         };
 
+        function calculateHeartPosition(angle) {
+            const t = angle * Math.PI / 180;
+            const x = 16 * Math.pow(Math.sin(t), 3);
+            const y = - (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+            return {
+                x: canvas.width / 2 + x * 10, // scale and center
+                y: canvas.height / 2 + y * 10
+            };
+        }
+
         function update() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            if (hearts.length < 100) {
-                hearts.push(new Heart());
+            if (hearts.length < 200) { // increase for more density
+                const angle = Math.random() * 360;
+                hearts.push(new Heart(angle));
             }
             hearts.forEach(heart => {
-                heart.y -= 1;
                 heart.draw();
-                if (heart.y < -20) {
-                    hearts.shift();
-                }
             });
             requestAnimationFrame(update);
         }
 
         function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth * 0.5;
+            canvas.height = window.innerHeight * 0.2;
         }
 
         window.addEventListener('resize', resize);
@@ -88,7 +96,7 @@
 
         function show_runtime() {
             window.setTimeout("show_runtime()", 1000);
-            const X = new Date("05/05/2024 00:09:54"); // 设置相识的日期
+            const X = new Date("05/05/2024 00:02:34"); // 设置相识的日期
             const Y = new Date();
             const T = (Y - X);
             const A = Math.floor(T / (24 * 3600 * 1000));
