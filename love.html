@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<title>520 from Destiny Liu</title>
+<title>Destiny Liu</title>
 <style>
     body {
         font-family: "微软雅黑", Arial, sans-serif;
@@ -40,28 +40,51 @@
     <script type="text/javascript">
         const canvas = document.getElementById('heartCanvas');
         const ctx = canvas.getContext('2d');
+        let hearts = [];
 
-        function drawHeart() {
-            let timer = 0;
-            const heart = new Image();
-            heart.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 29.6"><path fill="%23D90F45" d="M23.6 0c-2.3 0-4.3 1-5.6 2.6C16.7 1 14.7 0 12.4 0 5.5 0 0 5.6 0 12.6c0 10.3 16 16.9 16 16.9s16-6.6 16-16.9c0-7-5.5-12.6-12.4-12.6z"/></svg>';
-            heart.onload = function() {
-                function draw() {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.globalAlpha = Math.abs(Math.cos(timer));
-                    let scale = 1 + Math.cos(timer) * 0.1;
-                    ctx.save();
-                    ctx.translate(canvas.width / 2, canvas.height / 2);
-                    ctx.scale(scale, scale);
-                    ctx.drawImage(heart, -heart.width / 2, -heart.height / 2);
-                    ctx.restore();
-                    timer += 0.05;
-                    requestAnimationFrame(draw);
-                }
-                draw();
-            };
+        function Heart() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.opacity = Math.random() * 0.5 + 0.5;
+            this.scale = Math.random() * 20 + 10;
+            this.color = 'rgba(221, 46, 68,' + this.opacity + ')';
         }
-        drawHeart();
+
+        Heart.prototype.draw = function() {
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            let x = this.x;
+            let y = this.y;
+            let scale = this.scale;
+            ctx.moveTo(x, y);
+            ctx.bezierCurveTo(x + 0.5 * scale, y - 1.4 * scale, x + 1.5 * scale, y - 0.6 * scale, x, y + 0.6 * scale);
+            ctx.bezierCurveTo(x - 1.5 * scale, y - 0.6 * scale, x - 0.5 * scale, y - 1.4 * scale, x, y);
+            ctx.fill();
+        };
+
+        function update() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (hearts.length < 100) {
+                hearts.push(new Heart());
+            }
+            hearts.forEach(heart => {
+                heart.y -= 1;
+                heart.draw();
+                if (heart.y < -20) {
+                    hearts.shift();
+                }
+            });
+            requestAnimationFrame(update);
+        }
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        update();
 
         function show_runtime() {
             window.setTimeout("show_runtime()", 1000);
