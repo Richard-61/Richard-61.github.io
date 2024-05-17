@@ -24,7 +24,7 @@
         text-decoration: none;
     }
     span {
-        color: #831241; /* 修改为稍深的颜色以突出显示时间 */
+        color: #2e2d28;
         font-size: 1.2em;
     }
     canvas {
@@ -68,8 +68,8 @@
             const x = 16 * Math.pow(Math.sin(t), 3);
             const y = - (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
             return {
-                x: canvas.width / 2 + x * 10, // scale and center
-                y: canvas.height / 2 + y * 10
+                x: canvas.width / 2 + x * 15, // Adjusted scale for better fit
+                y: canvas.height / 2 + y * 15 + 50 // Adjusted offset for vertical alignment
             };
         }
 
@@ -87,7 +87,7 @@
 
         function resize() {
             canvas.width = window.innerWidth * 0.5;
-            canvas.height = window.innerHeight * 0.2;
+            canvas.height = window.innerHeight * 0.5; // Increased height
         }
 
         window.addEventListener('resize', resize);
@@ -103,7 +103,7 @@
             const B = Math.floor((T % (24 * 3600 * 1000)) / (3600 * 1000));
             const C = Math.floor((T % (3600 * 1000)) / (60 * 1000));
             const D = Math.floor((T % (60 * 1000)) / 1000);
-            runtime_span.innerHTML = "我们相识已经: " + A + "天" + B + "小时" + C + "分" + D + "秒";
+            runtime_span.innerHTML = "我喜欢你已经: " + A + "天" + B + "小时" + C + "分" + D + "秒";
         }
         show_runtime();
     </script>
