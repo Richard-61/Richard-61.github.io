@@ -24,72 +24,57 @@
         text-decoration: none;
     }
     span {
-        color: #2e2d28; /* 修改为金色以突出显示时间 */
+        color: #2e2d28; /* 修改为稍深的颜色以突出显示时间 */
         font-size: 1.2em;
     }
-    /* 添加动态爱心效果 */
-    .heart {
-        width: 100px;
-        height: 90px;
-        position: relative;
-        display: inline-block;
-        margin-bottom: 10px;
-        animation: pulse 1s infinite;
-    }
-    .heart:before,
-    .heart:after {
-        position: absolute;
-        content: "";
-        left: 50px;
-        top: 0;
-        width: 50px;
-        height: 80px;
-        background: rgb(216, 15, 69);
-        border-radius: 50px 50px 0 0;
-        transform: rotate(-45deg);
-        transform-origin: 0 100%;
-    }
-    .heart:after {
-        left: 0;
-        transform: rotate(45deg);
-        transform-origin: 100% 100%;
-    }
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.1);
-        }
-        100% {
-            transform: scale(1);
-        }
+    canvas {
+        border-radius: 10px;
     }
 </style>
 </head>
 <body>
-    <div class="heart"></div>
+    <canvas id="heartCanvas" width="300" height="300"></canvas>
     <h1>王小鱼，520快乐！</h1>
     <p>我想告诉你，你对我有多么重要 ❤️</p>
     <p><span id="runtime_span"></span></p>
     <script type="text/javascript">
+        const canvas = document.getElementById('heartCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawHeart() {
+            let timer = 0;
+            const heart = new Image();
+            heart.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 29.6"><path fill="%23D90F45" d="M23.6 0c-2.3 0-4.3 1-5.6 2.6C16.7 1 14.7 0 12.4 0 5.5 0 0 5.6 0 12.6c0 10.3 16 16.9 16 16.9s16-6.6 16-16.9c0-7-5.5-12.6-12.4-12.6z"/></svg>';
+            heart.onload = function() {
+                function draw() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.globalAlpha = Math.abs(Math.cos(timer));
+                    let scale = 1 + Math.cos(timer) * 0.1;
+                    ctx.save();
+                    ctx.translate(canvas.width / 2, canvas.height / 2);
+                    ctx.scale(scale, scale);
+                    ctx.drawImage(heart, -heart.width / 2, -heart.height / 2);
+                    ctx.restore();
+                    timer += 0.05;
+                    requestAnimationFrame(draw);
+                }
+                draw();
+            };
+        }
+        drawHeart();
+
         function show_runtime() {
             window.setTimeout("show_runtime()", 1000);
-            X = new Date("05/05/2024 00:09:54"); // 设置相识的日期
-            Y = new Date();
-            T = (Y.getTime() - X.getTime());
-            M = 24 * 60 * 60 * 1000;
-            a = T / M;
-            A = Math.floor(a);
-            b = (a - A) * 24;
-            B = Math.floor(b);
-            c = (b - B) * 60;
-            C = Math.floor((b - B) * 60);
-            D = Math.floor((c - C) * 60);
+            const X = new Date("05/05/2024 00:09:54"); // 设置相识的日期
+            const Y = new Date();
+            const T = (Y - X);
+            const A = Math.floor(T / (24 * 3600 * 1000));
+            const B = Math.floor((T % (24 * 3600 * 1000)) / (3600 * 1000));
+            const C = Math.floor((T % (3600 * 1000)) / (60 * 1000));
+            const D = Math.floor((T % (60 * 1000)) / 1000);
             runtime_span.innerHTML = "我们相识已经: " + A + "天" + B + "小时" + C + "分" + D + "秒";
         }
         show_runtime();
     </script>
-    <!-- <p><a href="https://www.yiliu.me">返回首页</a></p> -->
 </body>
 </html>
