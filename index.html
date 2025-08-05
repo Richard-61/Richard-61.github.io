@@ -24,14 +24,10 @@ a {
   text-decoration:none;
 }
 
-
-
 a:focus, a:hover {
   color: #f09228;
   text-decoration:none;
 }
-
-
 
 * {
   margin: 0pt;
@@ -68,13 +64,10 @@ h4 {
 }
 
 strong {
-  /* font-family: Lato, Verdana, Helvetica, sans-serif; */
-  /* font-size: 13px; */
   font-weight:bold;
 }
 
 ul { 
-  /* list-style: circle; */
   list-style: disc;
 }
 
@@ -124,7 +117,6 @@ div.paper {
 
 div.paper:hover {
     background: #FFFDEE;
-    /* background-color: #242d36 ; */
 }
 
 div.paper2 {
@@ -143,7 +135,6 @@ div.paper2 {
 
 div.paper2:hover {
     background: #FFFDEE;
-    /* background-color: #242d36 ; */
 }
 
 div.bio {
@@ -193,11 +184,9 @@ div.paper div {
 }
 
 img.paper {
-  /* margin-bottom: 0.4em; */
   float: left;
   width: 250px;
   height: 100px;
-
 }
 
 span.blurb {
@@ -214,58 +203,58 @@ pre, code {
   padding: 0;
 }
 
-    .bot {
+.bot {
   font-size: 14%;
 }
 
-   .ptypej {
+.ptypej {
     display: inline;
     padding: .0em .2em .05em;
     font-size: 85%;
     font-weight: bold;
     line-height: 1;
-  background-color: #5cb85c;
+    background-color: #5cb85c;
     color: #FFFFFF;
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-  margin-right: 6px;
+    margin-right: 6px;
 }
-   .ptypec {
+
+.ptypec {
     display: inline;
     padding: .0em .2em .05em;
     font-size: 85%;
     font-weight: bold;
     line-height: 1;
-  background-color: #5018a9;
+    background-color: #5018a9;
     color: #FFFFFF;
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-  margin-right: 6px;
+    margin-right: 6px;
 }
-   .ptypep {
+
+.ptypep {
     display: inline;
     padding: .0em .2em .05em;
     font-size: 85%;
     font-weight: bold;
     line-height: 1;
-  background-color: #6B6B6B;
+    background-color: #6B6B6B;
     color: #FFFFFF;
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-  margin-right: 6px;
+    margin-right: 6px;
 }
+
 /* navigation */
 #nav {
-  /* font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans',*/
-       /* Corbel, Arial, Helvetica, sans-serif; */
   font-family: Georgia, Helvetica, sans-serif;
   position: fixed;
   top: 50px;
-  /* left: 860px; */
-  margin-left: 860px;     /*1060*/
+  margin-left: 860px;
   width: 118px;
   font-size: 15px;
 }
@@ -273,9 +262,11 @@ pre, code {
 #nav li2 {
     margin-bottom: 1px;
 }
+
 ol {
   list-style: none;
 }
+
 #nav a {
     display: block;
     padding: 6px 9px 7px;
@@ -286,36 +277,81 @@ ol {
 
 #nav a:hover {
     color: #ffde00;
-    /* background-color: #242d36 ; */
+}
+
+/* 专门为论文列表设计的样式 */
+.publication-section {
+  padding: 1.2em;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.publication-section:hover {
+  background: #FFFDEE;
+}
+
+.paper-category {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #cd1313;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.paper-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: paper-counter;
+}
+
+.paper-entry {
+  display: flex;
+  margin-bottom: 0.6em;
+  line-height: 1.6;
+}
+
+.paper-number {
+  font-weight: bold;
+  color: #333;
+  margin-right: 1em;
+  flex-shrink: 0;
+  width: 30px;
+}
+
+.paper-content {
+  flex: 1;
+}
+
+.paper-content a {
+  font-weight: bold;
+  color: #137fd1;
+}
+
+.paper-content a:hover {
+  color: #f09228;
+}
+
+.paper-venue {
+  font-style: italic;
+}
+
+.paper-note {
+  color: #f09228;
+  font-weight: bold;
+}
+
+/* 修复原有paper div的样式冲突 */
+.publication-section > div {
+  padding-left: 0 !important;
 }
 </style>
 
-<!-- <script type="text/javascript" async="" src="./files/ga.js"></script>
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-7953909-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function () {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script> -->
-
 <script type="text/javascript" src="./files/hidebib.js"></script>
-
 <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>--><!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>--><!--<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>-->
 </head>
-
-<!-- <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-</script> -->
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -325,232 +361,203 @@ ol {
 
   ga('create', 'UA-66888300-1', 'auto');
   ga('send', 'pageview');
-
 </script>
-
-<!-- <script src="./files/main.js"></script> -->
 
 <body>
   <ol id="nav">
     <li><a href="#home" title="Home">Home</a></li>
-    <!-- <li><a href="#news" title="News">News</a></li> -->
-    <!-- <li><a href="#pj" title="Projects">Projects</a></li> -->
     <li><a href="#pub" title="Publications">Publications</a></li>
     <li><a href="#exp" title="Experience">Experience</a></li>
-    <!-- <li><a href="mailto:yi.liu1@siat.ac.cn" title="Contact">Contact</a></li> -->
   </ol>
+
 <a name="home"></a>
 <div style="margin-bottom: 1em; border: 1px solid #ddd; background-color: #fff; padding: 1em; height: 170px;">
 <div style="margin: 0px auto; width: 100%;">
 <img title="Yi Liu (刘熠)" style="float: left; padding-left: 1em; padding-right: 2em; height: 170px;" src="yiliu.jpg" />
 <div style="padding-left: 1em; vertical-align: top; height: 170px;"><span style="line-height: 150%; font-size: 23pt;">Yi Liu (刘熠)</span><br />
-<!-- <p>&nbsp;</p> -->
 <a href="https://scholar.google.com/citations?user=gGPehK4AAAAJ&hl=en"><strong>[Google Scholar]</strong></a> &nbsp;&nbsp;&nbsp;
 <a href="https://github.com/Richard-61"><strong>[GitHub]</strong></a>&nbsp;&nbsp;&nbsp;
-  <!-- <a href="https://www.linkedin.com/in/%E6%96%87%E7%81%8F-%E5%90%B4-aab583128/?locale=en_US">[Linkedin]</a>&nbsp;&nbsp;&nbsp; -->
-  <!-- <a href="https://www.zhihu.com/people/wu-wen-hao-80-23">[Zhihu]</a></p> -->
 <br></br>
-<!-- <p>&nbsp;</p> -->
 <h4><strong>Senior Engineer at  <i> Honor Device Co., Ltd</i>  .</strong></h4>
-<!-- <h4><strong>Research Intern at   <i>Shanghai AI Laboratory</i> .</strong></h4> -->
 <h4><span><strong>Personal Email </strong>:  <u> yiliu61richard@gmail.com</u> </span> <br /></h4>
-<!-- <h4><span><strong>School Email </strong>: <u> yi.liu1@siat.ac.cn</u></span> <br /></h4> -->
 </div>
 </div>
 </div>
-<!--<div style="clear: both; background-color: #fff; margin-top: 1.5em; padding: .2em; padding-left: .3em;">-->
-
-
-
-
 
 <div style="clear: both;">
 <div class="section">
-<!-- <h2>(<a href='https://scholar.google.com/citations?user=kWADCMUAAAAJ&hl=zh-CN'>Google scholar</a>)</h2> -->
 <h2>About Me</h2>
 <div class="bio">
-<!-- <h4>Research Interest</h4> -->
 <p>
- Now I work at Honor Device Co., Ltd. as a Computer Vision Senior Engineer to develop new technologies related to video understanding. <br>
+Now I work at Honor Device Co., Ltd. as the Project Lead (PL) of the On-device VLM Group, focusing on Vision-Language Models (VLM) and video understanding.
 I received my Ph.D. degree at <a href='http://mmlab.siat.ac.cn/'>MMLab@SIAT</a>, 
 <a href='http://english.ucas.ac.cn/'>University of Chinese Academy of Sciences</a>, supervised by 
 <a href='https://scholar.google.com/citations?user=gFtI-8QAAAAJ&hl=zh-CN'>Prof. Yu Qiao</a>
 and <a href='https://scholar.google.com/citations?user=hD948dkAAAAJ&hl=zh-CN'>Prof. Yali Wang</a> in 2024.
 And I was a research intern at <a href="https://www.shlab.org.cn/">Shanghai AI Laboratory </a> from 2022 to 2023. 
 I received a B.Eng. degree in <a href='https://english.hust.edu.cn/'>Huazhong University of Science and Technology (HUST)</a>, Wuhan, China, in 2019.<br>
-<br><h4>Research Interest</h4>
+
+<br />
 My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b>Deep Learning</b>, including:  
-<li>
-<strong style="font-size:15px;color:#086885">Video-related Applications</strong>: Temporal Action Detection, Temporal Sentence Grounding
-</li>
-<li>
-<strong style="font-size:15px;color:#086885">MultiModal Learning</strong>: Video-Language Modeling, Multimodal Large Language Model
-</li>
-<li>
-<strong style="font-size:15px;color:#086885">Long-form Video Understanding</strong>: Online Action Detection, Video QA, Video Caption
-</li>
+<br />
+<strong >1> MultiModal Learning</strong>: Video-Language Modeling, Multimodal Large Language Model
+<br />
+<strong >2> Video-related Applications</strong>: Temporal Action Detection, Temporal Sentence Grounding
+<br />
+<strong >3> Long-form Video Understanding</strong>: Online Action Detection, Video QA, Video Caption
 </p>
-<!-- My main research interests include: Supervised/Unsupervised Video Representation Learning, Dynamic Video Inference, Cross-Modal Learning, Temporal Action/Anomaly Detection. -->
-<!-- <strong><p>Please drop me an email if you are interested in those topics.</p></strong> -->
-
-
-
 </div>
 </div>
-
-
-<!-- <a name="pj"></a>
-<div style="clear: both;">
-<div class="section">
-  <h2>Projects</h2>
-  <div class="paper">
-    <ul>
-<li> <strong>2019.03-2020.06:</strong> 短视频的精彩瞬间检测 (中科院 & 华为)</li>
-<li> <strong>2020.06-2022.03:</strong> 城市管网视频缺陷检测 (中科院 & 博铭维)</li>
-<li> <strong>2020.12-2021.09:</strong> 细粒度时序动作检测 (中科院 & 南京大学)</li>
-<li> <strong>2022.03-2022.12:</strong> 视频理解通用模型及下游应用 (中科院 & 上海 AI Lab)</li>
-<li> <strong>2023.03-2023.12:</strong> 大模型范式下长视频理解基准 (中科院 & 上海 AI Lab)</li>
-
-    </ul>
-  </div>
-</div> -->
-
-
-
 
 <a name="pub"></a>
 <div style="clear: both;">
 <div class="section">
-<!-- <h2 id="confpapers">Publications [ <a href="https://www.yiliu.me">Full List</a> ] </h2> -->
-<h2 id="confpapers">Publications  </h2>
+<h2 id="confpapers">Publications</h2>
 
-
-
-
-<div class="paper" id="xxx">
-
-
-<!--   
-<b>PipeDet: Temporal Mask Attention Network for Urban Pipe Video Defect Detection
-  </b><br />
-  <u><b style="color:#d11372">Yi Liu</b></u>, Yu Qiao and Yali Wang. <i>IEEE Transactions on Multimedia <b><font color="#f09228">(under review)</font></b> </i> <br />
-  </b>  -->
-
+<div class="publication-section">
+  <span class="paper-category">Multimodal-LLM:</span>
   
-</b><br />
- <b>	MoVQA: A Benchmark of Versatile Question-Answering for Long-Form Movie Understanding
-[ <a href='https://arxiv.org/abs/2312.04817'>PDF</a> ]     
-</b><br />
-Hongjie Zhang*, <u><b style="color:#d11372">Yi Liu*</b></u>,  Lu Dong*, Yifei Huang, et al. <i> <b> <font color="#f09228">(under review)</font>  </i> <br />
-</b>
+  <div class="paper-list">
+    <div class="paper-entry">
+      <span class="paper-number">[1]</span>
+      <div class="paper-content">
+        <a href="http://arxiv.org/abs/2508.01540">MagicVL-2B: Empowering Vision-Language Models on Mobile Devices with Lightweight Visual Encoders via Curriculum Learning</a>,
+        <span class="paper-venue">arXiv 2025</span> <span class="paper-note">(AAAI 2026 under review, 第1作者)</span>
+      </div>
+    </div>
+    
+    <div class="paper-entry">
+      <span class="paper-number">[2]</span>
+      <div class="paper-content">
+        <b>MagicGen: A Universal Multimodal Data Synthesis Agent for Domain-Specific Vision-Language Model Tuning</b>,
+        <span class="paper-venue">arXiv 2025</span> <span class="paper-note">(In process, 第1通讯)</span>
+      </div>
+    </div>
+    
+    <div class="paper-entry">
+      <span class="paper-number">[3]</span>
+      <div class="paper-content">
+        <a href="http://arxiv.org/abs/2508.01546">E-VRAG: Enhancing Long Video Understanding with Resource-Efficient Retrieval Augmented Generation</a>,
+        <span class="paper-venue">arXiv 2025</span> <span class="paper-note">(AAAI 2026 under review, 第1通讯)</span>
+      </div>
+    </div>
+    
+    <div class="paper-entry">
+      <span class="paper-number">[4]</span>
+      <div class="paper-content">
+        <a href="https://arxiv.org/abs/2506.01725">VideoCap-R1: Enhancing MLLMs for Video Captioning via Structured Thinking</a>,
+        <span class="paper-venue">arXiv 2025</span> <span class="paper-note">(NeurIPS 2025 under review, 第2通讯)</span>
+      </div>
+    </div>
+    
+    <div class="paper-entry">
+      <span class="paper-number">[5]</span>
+      <div class="paper-content">
+        <a href="https://ieeexplore.ieee.org/abstract/document/10777595">MLLM-TA: Leveraging Multimodal Large Language Models for Precise Temporal Video Grounding</a>,
+        <span class="paper-venue">IEEE Signal Processing Letters, 2024</span> <span class="paper-note">(SPL, IF=3.9, 第1作者)</span>
+      </div>
+    </div>
+    
+    <div class="paper-entry">
+      <span class="paper-number">[6]</span>
+      <div class="paper-content">
+        <a href="https://arxiv.org/abs/2311.17005">MVBench: A Comprehensive Multi-modal Video Understanding Benchmark</a>,
+        <span class="paper-venue">CVPR 2024</span> <span class="paper-note">(CVPR, CCF-A, 第6作者)</span>
+      </div>
+    </div>
+    
+    <div class="paper-entry">
+      <span class="paper-number">[7]</span>
+      <div class="paper-content">
+        <a href="https://arxiv.org/abs/2312.04817">LvBench: A Benchmark for Long-form Video Understanding with Versatile Multi-modal Question Answering</a>,
+        <span class="paper-venue">arXiv 2023</span> <span class="paper-note">(IJCV under review, 第2作者)</span>
+      </div>
+    </div>
+  </div>
 
+  <span class="paper-category" style="margin-top: 2em;">Traditional Video Understanding:</span>
+  <div class="paper-list">
+    <div class="paper-entry">
+      <span class="paper-number">[1]</span>
+      <div class="paper-content">
+        <a href="https://link.springer.com/article/10.1007/s11554-024-01454-4">F2S-Net: Learning Frame-To-Segment Prediction for Online Action Detection</a>,
+        <span class="paper-venue">Journal of Real-Time Image Processing, 2024</span> <span class="paper-note">(JRTIP, IF=3.0, 第1作者)</span>
+      </div>
+    </div>
 
-
-
-</b><br />
-<b>F2S-Net: Learning Frame-To-Segment Prediction for Online Action Detection
-  </b><br />
-  <u><b style="color:#d11372">Yi Liu</b></u>, Yu Qiao and Yali Wang. <i>Journal of Real-Time Image Processing<b> <font color="#d11372">(JRTIP 2024)</font> </i> <br />
-  </b> 
-
-
-</b><br />
-<b>Dual Masked Modeling for Weakly-Supervised Temporal Boundary Discovery
-    [ <a href='https://ieeexplore.ieee.org/abstract/document/10374139/'>PDF</a> ] 
-    </b><br />
-    Yuer Ma*, <u><b style="color:#d11372">Yi Liu*</b></u>,  Wenxiong Kang, Limin Wang, Yu Qiao and Yali Wang.  <i>IEEE Transactions on Multimedia<b> <font color="#d11372">(T-MM 2023)</font></i> <br />
-    </b> 
-
-</b><br />
-<b>	Learning Discriminative Feature Representation for Open Set Action Recognition
-  [ <a href='https://dl.acm.org/doi/abs/10.1145/3581783.3611824'>PDF</a> ] 
-<!-- [ <a href='https://deeperaction.github.io/datasets/fineaction'>Project</a> ]     [ <a href='https://arxiv.org/pdf/2105.11107.pdf'>PDF</a> ]     [ <a href='https://github.com/Richard-61/FineAction'>Code</a> ] -->
-</b><br />
-Hongjie Zhang*, <u><b style="color:#d11372">Yi Liu*</b></u>,  Limin Wang, Yali Wang and Yu Qiao. <i>ACM Multimedia <b>  <font color="#d11372">(ACM MM 2023)</font>    </i> <br />
-</b>
-
-
-
-
-</b><br />
-<b>FineAction: A Fine-Grained Video Dataset for Temporal Action Localization
-      [ <a href='https://deeperaction.github.io/datasets/fineaction'>Project</a> ] [ <a href='https://arxiv.org/pdf/2105.11107'>PDF</a> ] [ <a href='https://github.com/Richard-61/FineAction'>Code</a> ]
-      </b><br />
-      <u><b style="color:#d11372">Yi Liu*</b></u>, Limin Wang*, Yali Wang*, Xiao Ma, and Yu Qiao. <i>IEEE Transactions on Image Processing <b>  <font color="#d11372">(T-IP 2022)</font>  </i> <br />
-      </b>
-
-       </b><br />
-     <b>VideoPipe 2022 Challenge: Real-World Video Understanding for Urban Pipe Inspection
-        [ <a href='https://videopipe.github.io/'>Project</a> ]     [ <a href='https://arxiv.org/pdf/2210.11158'>PDF</a> ]     [ <a href='https://github.com/Richard-61/VideoPipe'>Code</a> ]
-      </b><br />
-      <u><b style="color:#d11372">Yi Liu*</b></u>, Xuan Zhang*, Ying Li, Guixin Liang, et al. <i> International Conference on Pattern Recognition <b>  <font color="#d11372">(ICPR 2022)</font>  </i> <br />
-      </b>
-
-
-      </b><br />
-   <b>短视频场景在线起始检测任务及方法研究
-        [ <a href='https://jcjs.siat.ac.cn/jcjs/article/abstract/202106006'>PDF</a> ]
-      </b><br />
-      李煜堃*, <u><b style="color:#d11372">刘熠*</b></u>, 周林, 何艾莲, 王亚立, 彭小江, 乔宇.   <i> 集成技术 <b>  <font color="#d11372">(集成技术 2021)</font>  </i> <br />
-      </b>
-
+    <div class="paper-entry">
+      <span class="paper-number">[2]</span>
+      <div class="paper-content">
+        <a href="https://ieeexplore.ieee.org/abstract/document/10374139">Dual masked modeling for weakly-supervised temporal boundary discovery</a>,
+        <span class="paper-venue">IEEE Transactions on Multimedia, 2023</span> <span class="paper-note">(TMM, IF=9.7, 第2作者)</span>
+      </div>
+    </div>
+    
+    <div class="paper-entry">
+      <span class="paper-number">[3]</span>
+      <div class="paper-content">
+        <a href="https://arxiv.org/abs/2212.03191">InternVideo: General Video Foundation Models via Generative and Discriminative Learning</a>,
+        <span class="paper-venue">arXiv 2022</span> <span class="paper-note">(SCIS under review, 第9作者)</span>
+      </div>
+    </div>
+    
+    <div class="paper-entry">
+      <span class="paper-number">[4]</span>
+      <div class="paper-content">
+        <a href="https://dl.acm.org/doi/abs/10.1145/3581783.3611824">Learning Discriminative Feature Representation for Open Set Action Recognition</a>,
+        <span class="paper-venue">ACM International Conference on Multimedia, 2023</span> <span class="paper-note">(ACM MM, CCF-A, 第2作者)</span>
+      </div>
+    </div>
+    
+    <div class="paper-entry">
+      <span class="paper-number">[5]</span>
+      <div class="paper-content">
+        <a href="https://arxiv.org/abs/2105.11107">FineAction: A Fine-Grained Video Dataset for Temporal Action Localization</a>,
+        <span class="paper-venue">IEEE Transactions on Image Processing, 2022</span> <span class="paper-note">(TIP, IF=13.7, 第1作者)</span>
+      </div>
+    </div>
+    
+    <div class="paper-entry">
+      <span class="paper-number">[6]</span>
+      <div class="paper-content">
+        <a href="https://arxiv.org/abs/2210.11158">VideoPipe 2022 Challenge: Real-World Video Understanding for Urban Pipe Inspection</a>,
+        <span class="paper-venue">International Conference on Pattern Recognition, 2022</span> <span class="paper-note">(ICPR, CCF-C, 第1作者)</span>
+      </div>
+    </div>
+    
+    <div class="paper-entry">
+      <span class="paper-number">[7]</span>
+      <div class="paper-content">
+        <a href="https://jcjs.siat.ac.cn/cn/article/id/202106006">短视频场景在线起始检测任务及方法研究</a>,
+        <span class="paper-venue">集成技术, 2021</span> <span class="paper-note">(第2作者)</span>
+      </div>
+    </div>
+  </div>
 </div>
 
-
-
-
-
-
-
+</div>
+</div>
 
 <a name="exp"></a>
 <div style="clear: both;">
 <div class="section"><h2>Experience</h2>
 <div class="paper">
 
-
-
 <h3>Workshops</h3>
-<li> <b style="color:#d11372">Student organizer</b>  of ECCV 2022 DeeperAction Challenge, <b> <a href='https://codalab.lisn.upsaclay.fr/competitions/4386'>Track 1: Temporal Action Localization</a>  </b>  </li>
-<li> <b style="color:#d11372">Student organizer</b>  of ICPR 2022 VideoPipe Challenge,    <b> <a href='https://codalab.lisn.upsaclay.fr/competitions/2284'>Track 2: Temporal Defect Localization</a>  </b> </li>
-<li> <b style="color:#d11372">Student organizer</b>  of ICCV 2021 DeeperAction Challenge, <b> <a href='https://competitions.codalab.org/competitions/32363'>Track 1: Temporal Action Localization</a> </b>  </li> 
-<!-- <h3>Member of IEEE, ACM and CVF</h3> -->
-<li> <b style="color:#d11372">1st Prize</b> in ECCV 2022 Ego4D Episodic Memory Challenge, <b> <a href='https://ego4d-data.org/workshops/eccv22/'> Moments Queries Track </a>  </b>  </li>
-<li> <b style="color:#d11372">1st Prize</b> in ECCV 2022 Ego4D Episodic Memory Challenge, <b> <a href='https://ego4d-data.org/workshops/eccv22/'> Looking At Me Track </a>  </b> </li>
-
+<li> <b >Student organizer</b>  of ECCV 2022 DeeperAction Challenge, <b> <a href='https://codalab.lisn.upsaclay.fr/competitions/4386'>Track 1: Temporal Action Localization</a>  </b>  </li>
+<li> <b >Student organizer</b>  of ICPR 2022 VideoPipe Challenge,    <b> <a href='https://codalab.lisn.upsaclay.fr/competitions/2284'>Track 2: Temporal Defect Localization</a>  </b> </li>
+<li> <b >Student organizer</b>  of ICCV 2021 DeeperAction Challenge, <b> <a href='https://competitions.codalab.org/competitions/32363'>Track 1: Temporal Action Localization</a> </b>  </li> 
+<li> <b >1st Prize</b> in ECCV 2022 Ego4D Episodic Memory Challenge, <b> <a href='https://ego4d-data.org/workshops/eccv22/'> Moments Queries Track </a>  </b>  </li>
+<li> <b >1st Prize</b> in ECCV 2022 Ego4D Episodic Memory Challenge, <b> <a href='https://ego4d-data.org/workshops/eccv22/'> Looking At Me Track </a>  </b> </li>
 
 <h3>Journal Reviewer</h3>
 <li>  Neural Networks, Journal of Visual Communication and Image Representation </li>
 <li>  Pattern Recognition, International Journal of Computer Vision  </li>
 <li>  IEEE Transactions on Pattern Analysis and Machine Intelligence  </li>
 
-
-<!-- <h3>Workshop Participator</h3> -->
-
 </div>
 </div>
 </div>	
-
-
-
-<!-- <div style="clear:both;"> -->
-<!-- <p align="right"><font size="5">Last Updated on 21th Oct, 2022</a></font></p> -->
-<!-- <p align="right"><font size="5">Published with <a href='https://pages.github.com/'>GitHub Pages</a></font></p> -->
-<!-- </div> -->
-
-
-
-
-
-
-
-
-<!-- <hr>
-<div id="clustrmaps-widget"></div>
-<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=0e1633&w=300&t=tt&d=N0ZXDEaZVrn2LXkG_byNAa2NLm2v6WRQIUifhg-2f1A&co=0b4975&ct=cdd4d9&cmo=3acc3a&cmn=ff5353'></script> -->
-<!-- <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=Mey1Pj0l_Q9eojQ32DA8EQrF7_beoN3_eOpGywJi_8M&cl=ffffff&w=a"></script> -->
-<!-- <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/globe.js?d=Mey1Pj0l_Q9eojQ32DA8EQrF7_beoN3_eOpGywJi_8M"></script> -->
-<!-- 	<script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=N0ZXDEaZVrn2LXkG_byNAa2NLm2v6WRQIUifhg-2f1A"></script> -->
 
 </body>
 </html>
