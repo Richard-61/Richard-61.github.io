@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
@@ -304,21 +305,47 @@ ol {
   list-style: none;
   padding: 0;
   margin: 0;
-  counter-reset: paper-counter;
+}
+
+/* 为每个分类创建独立的计数器 */
+.multimodal-list {
+  counter-reset: multimodal-counter;
+}
+
+.traditional-list {
+  counter-reset: traditional-counter;
 }
 
 .paper-entry {
   display: flex;
   margin-bottom: 0.6em;
-  line-height: 1.6;
+  line-height: 1.3;
+}
+
+/* 自动编号功能 */
+.multimodal-list .paper-entry {
+  counter-increment: multimodal-counter;
+}
+
+.traditional-list .paper-entry {
+  counter-increment: traditional-counter;
 }
 
 .paper-number {
   font-weight: bold;
-  color: #333;
+  color: #000000;
   margin-right: 1em;
   flex-shrink: 0;
   width: 30px;
+}
+
+/* 使用伪元素自动生成编号 */
+.multimodal-list .paper-number::before {
+  content: "[" counter(multimodal-counter) "]";
+}
+
+.traditional-list .paper-number::before {
+  content: "[" counter(traditional-counter) "]";
 }
 
 .paper-content {
@@ -327,7 +354,7 @@ ol {
 
 .paper-content a {
   font-weight: bold;
-  color: #137fd1;
+  color: #108be9;
 }
 
 .paper-content a:hover {
@@ -397,8 +424,7 @@ and <a href='https://scholar.google.com/citations?user=hD948dkAAAAJ&hl=zh-CN'>Pr
 And I was a research intern at <a href="https://www.shlab.org.cn/">Shanghai AI Laboratory </a> from 2022 to 2023. 
 I received a B.Eng. degree in <a href='https://english.hust.edu.cn/'>Huazhong University of Science and Technology (HUST)</a>, Wuhan, China, in 2019.<br>
 
-<br />
-My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b>Deep Learning</b>, including:  
+<b>My research interests broadly lie in the areas of  Computer Vision and Deep Learning, including:  </b>
 <br />
 <strong >1> MultiModal Learning</strong>: Video-Language Modeling, Multimodal Large Language Model
 <br />
@@ -417,9 +443,9 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
 <div class="publication-section">
   <span class="paper-category">Multimodal-LLM:</span>
   
-  <div class="paper-list">
+  <div class="paper-list multimodal-list">
     <div class="paper-entry">
-      <span class="paper-number">[1]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="http://arxiv.org/abs/2508.01540">MagicVL-2B: Empowering Vision-Language Models on Mobile Devices with Lightweight Visual Encoders via Curriculum Learning</a>,
         <span class="paper-venue">arXiv 2025</span> <span class="paper-note">(AAAI 2026 under review, 第1作者)</span>
@@ -427,7 +453,7 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
     </div>
     
     <div class="paper-entry">
-      <span class="paper-number">[2]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <b>MagicGen: A Universal Multimodal Data Synthesis Agent for Domain-Specific Vision-Language Model Tuning</b>,
         <span class="paper-venue">arXiv 2025</span> <span class="paper-note">(In process, 第1通讯)</span>
@@ -435,7 +461,7 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
     </div>
     
     <div class="paper-entry">
-      <span class="paper-number">[3]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="http://arxiv.org/abs/2508.01546">E-VRAG: Enhancing Long Video Understanding with Resource-Efficient Retrieval Augmented Generation</a>,
         <span class="paper-venue">arXiv 2025</span> <span class="paper-note">(AAAI 2026 under review, 第1通讯)</span>
@@ -443,7 +469,7 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
     </div>
     
     <div class="paper-entry">
-      <span class="paper-number">[4]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://arxiv.org/abs/2506.01725">VideoCap-R1: Enhancing MLLMs for Video Captioning via Structured Thinking</a>,
         <span class="paper-venue">arXiv 2025</span> <span class="paper-note">(NeurIPS 2025 under review, 第2通讯)</span>
@@ -451,7 +477,7 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
     </div>
     
     <div class="paper-entry">
-      <span class="paper-number">[5]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://ieeexplore.ieee.org/abstract/document/10777595">MLLM-TA: Leveraging Multimodal Large Language Models for Precise Temporal Video Grounding</a>,
         <span class="paper-venue">IEEE Signal Processing Letters, 2024</span> <span class="paper-note">(SPL, IF=3.9, 第1作者)</span>
@@ -459,7 +485,7 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
     </div>
     
     <div class="paper-entry">
-      <span class="paper-number">[6]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://arxiv.org/abs/2311.17005">MVBench: A Comprehensive Multi-modal Video Understanding Benchmark</a>,
         <span class="paper-venue">CVPR 2024</span> <span class="paper-note">(CVPR, CCF-A, 第6作者)</span>
@@ -467,7 +493,7 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
     </div>
     
     <div class="paper-entry">
-      <span class="paper-number">[7]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://arxiv.org/abs/2312.04817">LvBench: A Benchmark for Long-form Video Understanding with Versatile Multi-modal Question Answering</a>,
         <span class="paper-venue">arXiv 2023</span> <span class="paper-note">(IJCV under review, 第2作者)</span>
@@ -476,9 +502,9 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
   </div>
 
   <span class="paper-category" style="margin-top: 2em;">Traditional Video Understanding:</span>
-  <div class="paper-list">
+  <div class="paper-list traditional-list">
     <div class="paper-entry">
-      <span class="paper-number">[1]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://link.springer.com/article/10.1007/s11554-024-01454-4">F2S-Net: Learning Frame-To-Segment Prediction for Online Action Detection</a>,
         <span class="paper-venue">Journal of Real-Time Image Processing, 2024</span> <span class="paper-note">(JRTIP, IF=3.0, 第1作者)</span>
@@ -486,7 +512,7 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
     </div>
 
     <div class="paper-entry">
-      <span class="paper-number">[2]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://ieeexplore.ieee.org/abstract/document/10374139">Dual masked modeling for weakly-supervised temporal boundary discovery</a>,
         <span class="paper-venue">IEEE Transactions on Multimedia, 2023</span> <span class="paper-note">(TMM, IF=9.7, 第2作者)</span>
@@ -494,7 +520,7 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
     </div>
     
     <div class="paper-entry">
-      <span class="paper-number">[3]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://arxiv.org/abs/2212.03191">InternVideo: General Video Foundation Models via Generative and Discriminative Learning</a>,
         <span class="paper-venue">arXiv 2022</span> <span class="paper-note">(SCIS under review, 第9作者)</span>
@@ -502,7 +528,7 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
     </div>
     
     <div class="paper-entry">
-      <span class="paper-number">[4]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://dl.acm.org/doi/abs/10.1145/3581783.3611824">Learning Discriminative Feature Representation for Open Set Action Recognition</a>,
         <span class="paper-venue">ACM International Conference on Multimedia, 2023</span> <span class="paper-note">(ACM MM, CCF-A, 第2作者)</span>
@@ -510,7 +536,7 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
     </div>
     
     <div class="paper-entry">
-      <span class="paper-number">[5]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://arxiv.org/abs/2105.11107">FineAction: A Fine-Grained Video Dataset for Temporal Action Localization</a>,
         <span class="paper-venue">IEEE Transactions on Image Processing, 2022</span> <span class="paper-note">(TIP, IF=13.7, 第1作者)</span>
@@ -518,7 +544,7 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
     </div>
     
     <div class="paper-entry">
-      <span class="paper-number">[6]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://arxiv.org/abs/2210.11158">VideoPipe 2022 Challenge: Real-World Video Understanding for Urban Pipe Inspection</a>,
         <span class="paper-venue">International Conference on Pattern Recognition, 2022</span> <span class="paper-note">(ICPR, CCF-C, 第1作者)</span>
@@ -526,7 +552,7 @@ My research interests broadly lie in the areas of  <b>Computer Vision</b> and <b
     </div>
     
     <div class="paper-entry">
-      <span class="paper-number">[7]</span>
+      <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://jcjs.siat.ac.cn/cn/article/id/202106006">短视频场景在线起始检测任务及方法研究</a>,
         <span class="paper-venue">集成技术, 2021</span> <span class="paper-note">(第2作者)</span>
