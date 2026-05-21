@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Yi Liu (刘熠)</title>
-	<meta content="Yi Liu (刘熠), Richard-61.github.io" name="keywords" />
+	<meta content="Yi Liu, 刘熠, Multimodal LLM, Video Understanding, ByteDance, MMLab SIAT" name="keywords" />
+	<meta name="description" content="Yi Liu (刘熠) — AIGC Algorithm Engineer at ByteDance, Ph.D. from MMLab@SIAT, UCAS. Research on Multimodal LLMs, multimodal data synthesis and video understanding." />
 	<style media="screen" type="text/css">
   html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
   border: 0pt none;
@@ -68,7 +70,7 @@ strong {
   font-weight:bold;
 }
 
-ul { 
+ul {
   list-style: disc;
 }
 
@@ -89,7 +91,7 @@ alert {
 }
 
 em, i {
-	font-style:italic;
+  font-style:italic;
 }
 
 div.section {
@@ -109,9 +111,9 @@ div.paper {
   border: 2px solid #ddd;
   background: #fff;
   padding: 0.55em .8em 0.6em .8em;
-  border-top-right-radius:10px; 
-  border-top-left-radius:10px; 
-  border-bottom-left-radius:10px; 
+  border-top-right-radius:10px;
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
   line-height: 140%;
 }
@@ -127,9 +129,9 @@ div.paper2 {
   border: 0px solid #ddd;
   background: #fff;
   padding: 0.55em .8em 0.6em .8em;
-  border-top-right-radius:10px; 
-  border-top-left-radius:10px; 
-  border-bottom-left-radius:10px; 
+  border-top-right-radius:10px;
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
   line-height: 140%;
 }
@@ -145,9 +147,9 @@ div.bio {
   border: 0px solid #ddd;
   background: #fff;
   padding: 0.55em .8em 0.6em .8em;
-  border-top-right-radius:10px; 
-  border-top-left-radius:10px; 
-  border-bottom-left-radius:10px; 
+  border-top-right-radius:10px;
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
   line-height: 190%;
 }
@@ -159,9 +161,9 @@ div.res {
   border: 0px solid #ddd;
   background: #fff;
   padding: 0.65em .8em 0.15em .8em;
-  border-top-right-radius:10px; 
-  border-top-left-radius:10px; 
-  border-bottom-left-radius:10px; 
+  border-top-right-radius:10px;
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
   line-height: 130%;
 }
@@ -173,9 +175,9 @@ div.award {
   border: 0px solid #ddd;
   background: #fff;
   padding: 0.65em .8em 0.15em .8em;
-  border-top-right-radius:10px; 
-  border-top-left-radius:10px; 
-  border-bottom-left-radius:10px; 
+  border-top-right-radius:10px;
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
   line-height: 130%;
 }
@@ -381,21 +383,85 @@ ol {
 .publication-section > div {
   padding-left: 0 !important;
 }
-</style>
+
+/* ===== 2026-05 更新：顶部信息卡片 ===== */
+.header-card {
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  padding: 1em;
+  overflow: hidden;
+}
+
+.header-photo {
+  float: left;
+  padding-left: 1em;
+  padding-right: 2em;
+  height: 185px;
+}
+
+.header-info {
+  overflow: hidden;
+  padding-left: 1em;
+}
+
+.header-name {
+  line-height: 150%;
+  font-size: 23pt;
+}
+
+.header-info h4 {
+  line-height: 150%;
+}
+
+/* ===== 2026-05 更新：响应式 / 移动端适配 ===== */
+@media screen and (max-width: 980px) {
+  body {
+    width: auto;
+    margin: 1em;
+  }
+  #nav {
+    position: static;
+    top: auto;
+    margin: 0 0 1.2em 0;
+    width: auto;
+  }
+  #nav li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  #nav a {
+    display: inline-block;
+  }
+  div.paper div {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header-photo {
+    float: none;
+    display: block;
+    margin: 0 auto 0.9em auto;
+    padding: 0;
+    height: 175px;
+  }
+  .header-info {
+    padding-left: 0;
+    text-align: center;
+  }
+  .header-name {
+    font-size: 20pt;
+  }
+  .paper-entry {
+    line-height: 1.7em;
+  }
+}
+	</style>
 
 <script type="text/javascript" src="./files/hidebib.js"></script>
-<link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
 </head>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-66888300-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 <body>
   <ol id="nav">
@@ -405,18 +471,15 @@ ol {
   </ol>
 
 <a name="home"></a>
-<div style="margin-bottom: 1em; border: 1px solid #ddd; background-color: #fff; padding: 1em; height: 170px;">
-<div style="margin: 0px auto; width: 100%;">
-<img title="Yi Liu (刘熠)" style="float: left; padding-left: 1em; padding-right: 2em; height: 170px;" src="pig.jpg" />
-<div style="padding-left: 1em; vertical-align: top; height: 170px;"><span style="line-height: 150%; font-size: 23pt;">Yi Liu (刘熠)</span><br />
+<div class="header-card">
+<img class="header-photo" title="Yi Liu (刘熠)" alt="Yi Liu" src="pig.jpg" />
+<div class="header-info"><span class="header-name">Yi Liu (刘熠)</span><br />
 
-<h3><a href="https://scholar.google.com/citations?user=gGPehK4AAAAJ&hl=en"><strong><u>Google Scholar</u></strong></a> &nbsp;&nbsp;&nbsp; <a href="刘熠_简历_2025.pdf"><strong><u>CV</u></strong></a>&nbsp;&nbsp;&nbsp; </h3>
-<h4><strong>Senior Engineer at  <i> Honor Device Co., Ltd</i>  .</strong></h4>
-<h4><span><strong>Personal Email </strong>:  yiliu61richard@gmail.com </span> <br /></h4>
-<h4><span><strong>Research Interests </strong>: 
-  Vision-Language Models, Video Understanding  </span> <br /></h4>
+<h3><a href="https://scholar.google.com/citations?user=gGPehK4AAAAJ&hl=en"><strong><u>Google Scholar</u></strong></a> &nbsp;&nbsp;&nbsp; <a href="刘熠_简历_20260519.pdf"><strong><u>CV</u></strong></a>&nbsp;&nbsp;&nbsp; </h3>
+<h4><strong>AIGC Algorithm Engineer at <i>ByteDance</i></strong></h4>
+<h4><span><strong>Email</strong>: yiliu61richard@gmail.com</span></h4>
+<h4><span><strong>Research Interests</strong>: Multimodal LLMs, Multimodal Data Synthesis, Long Video Understanding, Temporal Action Detection</span></h4>
 
-</div>
 </div>
 </div>
 
@@ -425,16 +488,23 @@ ol {
 <h2>About Me</h2>
 <div class="bio">
 <p>
-Now I work at <b>Honor Device Co., Ltd</b>. as the project leader (PL) of the On-device VLM Group, 
-focusing on Vision-Language Models and Video Understanding.
-I received my Ph.D. degree at <a href='http://mmlab.siat.ac.cn/'>MMLab@SIAT</a>, 
-<b>University of Chinese Academy of Sciences (UCAS)</b>, supervised by 
+I am currently an <b>AIGC Algorithm Engineer</b> at <b>ByteDance</b> (Commercial AI-AIGC),
+where I lead the development of advertising creative-material Agents &mdash; spanning data
+construction, model training, and product deployment.
+Before that, I led the Multimodal Understanding &amp; Generation Group at
+<b>Honor Device Co., Ltd.</b> from 2024 to 2025, managing a team of 10+ engineers on
+on-device Vision-Language Models.
+I received my Ph.D. degree at <a href='http://mmlab.siat.ac.cn/'>MMLab@SIAT</a>,
+<b>University of Chinese Academy of Sciences (UCAS)</b>, supervised by
 <a href='https://scholar.google.com/citations?user=gFtI-8QAAAAJ&hl=zh-CN'>Prof. Yu Qiao</a>
 and <a href='https://scholar.google.com/citations?user=hD948dkAAAAJ&hl=zh-CN'>Prof. Yali Wang</a> in 2024.
-And I was a research intern at <a href="https://www.shlab.org.cn/">Shanghai AI Laboratory </a> from 2022 to 2023. 
-I received a B.Eng. degree in <b>Huazhong University of Science and Technology (HUST)</b>, Wuhan, China, in 2019.<br>
+I was also a research intern at <a href="https://www.shlab.org.cn/">Shanghai AI Laboratory</a>
+from 2022 to 2023.
+I received my B.Eng. degree from <b>Huazhong University of Science and Technology (HUST)</b>,
+Wuhan, China, in 2019.<br>
 
 </p>
+</div>
 </div>
 </div>
 
@@ -444,40 +514,32 @@ I received a B.Eng. degree in <b>Huazhong University of Science and Technology (
 <h2 id="confpapers">Publications</h2>
 
 <div class="publication-section">
-  
+
   <div class="paper-list multimodal-list">
     <div class="paper-entry">
       <span class="paper-number"></span>
       <div class="paper-content">
         <a href="http://arxiv.org/abs/2508.01540"><u>MagicVL-2B: Empowering Vision-Language Models on Mobile Devices with Lightweight Visual Encoders via Curriculum Learning</u></a>,
-        <span class="paper-venue">arXiv, 2025</span> <span class="paper-review">(AAAI 2026 under review, 第1作者)</span>
+        <span class="paper-venue">arXiv, 2025</span> <span class="paper-review">(Tech report, 第1作者)</span>
       </div>
     </div>
-    
-    <div class="paper-entry">
-      <span class="paper-number"></span>
-      <div class="paper-content">
-        <b>MagicGen: A Universal Multimodal Data Synthesis Agent for Domain-Specific Vision-Language Model Tuning</b>,
-        <span class="paper-venue">arXiv, 2025</span> <span class="paper-review">(In process, 第1通讯)</span>
-      </div>
-    </div>
-    
+
     <div class="paper-entry">
       <span class="paper-number"></span>
       <div class="paper-content">
         <a href="http://arxiv.org/abs/2508.01546"><u>E-VRAG: Enhancing Long Video Understanding with Resource-Efficient Retrieval Augmented Generation</u></a>,
-        <span class="paper-venue">arXiv, 2025</span> <span class="paper-review">(AAAI 2026 under review, 第1通讯)</span>
+        <span class="paper-venue">arXiv, 2025</span> <span class="paper-review">(Tech report, 第1通讯)</span>
       </div>
     </div>
-    
+
     <div class="paper-entry">
       <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://arxiv.org/abs/2506.01725"><u>VideoCap-R1: Enhancing MLLMs for Video Captioning via Structured Thinking</u></a>,
-        <span class="paper-venue">arXiv, 2025</span> <span class="paper-review">(NeurIPS 2025 under review, 第2通讯)</span>
+        <span class="paper-venue">arXiv, 2025</span> <span class="paper-review">(Under review, 共同通讯)</span>
       </div>
     </div>
-    
+
     <div class="paper-entry">
       <span class="paper-number"></span>
       <div class="paper-content">
@@ -485,7 +547,7 @@ I received a B.Eng. degree in <b>Huazhong University of Science and Technology (
         <span class="paper-venue">International Journal of Computer Vision, 2025</span> <span class="paper-note">(IJCV, 中科院1区, IF=9.3, 共一第3)</span>
       </div>
     </div>
-    
+
     <div class="paper-entry">
       <span class="paper-number"></span>
       <div class="paper-content">
@@ -493,7 +555,7 @@ I received a B.Eng. degree in <b>Huazhong University of Science and Technology (
         <span class="paper-venue">IEEE Signal Processing Letters, 2024</span> <span class="paper-note">(SPL, 中科院2区, IF=3.9, 第1作者)</span>
       </div>
     </div>
-    
+
     <div class="paper-entry">
       <span class="paper-number"></span>
       <div class="paper-content">
@@ -517,7 +579,7 @@ I received a B.Eng. degree in <b>Huazhong University of Science and Technology (
         <span class="paper-venue">IEEE Transactions on Multimedia, 2023</span> <span class="paper-note">(TMM, 中科院1区, IF=9.7, 共一第2)</span>
       </div>
     </div>
-    
+
     <div class="paper-entry">
       <span class="paper-number"></span>
       <div class="paper-content">
@@ -525,15 +587,15 @@ I received a B.Eng. degree in <b>Huazhong University of Science and Technology (
         <span class="paper-venue">ACM International Conference on Multimedia, 2023</span> <span class="paper-note">(ACM MM, CCF-A会议, 共一第2)</span>
       </div>
     </div>
-    
+
     <div class="paper-entry">
       <span class="paper-number"></span>
       <div class="paper-content">
         <a href="https://arxiv.org/abs/2212.03191"><u>InternVideo: General Video Foundation Models via Generative and Discriminative Learning</u></a>,
-        <span class="paper-venue">arXiv, 2022</span> <span class="paper-review">(SCIS under review, 第9作者)</span>
+        <span class="paper-venue">arXiv, 2022</span> <span class="paper-note">(SCIS, 第9作者)</span>
       </div>
     </div>
-    
+
     <div class="paper-entry">
       <span class="paper-number"></span>
       <div class="paper-content">
@@ -541,7 +603,7 @@ I received a B.Eng. degree in <b>Huazhong University of Science and Technology (
         <span class="paper-venue">IEEE Transactions on Image Processing, 2022</span> <span class="paper-note">(TIP, 中科院1区, IF=13.7, 第1作者)</span>
       </div>
     </div>
-    
+
     <div class="paper-entry">
       <span class="paper-number"></span>
       <div class="paper-content">
@@ -549,7 +611,7 @@ I received a B.Eng. degree in <b>Huazhong University of Science and Technology (
         <span class="paper-venue">International Conference on Pattern Recognition, 2022</span> <span class="paper-note">(ICPR, CCF-C会议, 第1作者)</span>
       </div>
     </div>
-    
+
     <div class="paper-entry">
       <span class="paper-number"></span>
       <div class="paper-content">
@@ -567,23 +629,43 @@ I received a B.Eng. degree in <b>Huazhong University of Science and Technology (
 <a name="exp"></a>
 <div style="clear: both;">
 <div class="section"><h2>Experience</h2>
+
 <div class="paper">
+<h3>Work Experience</h3>
+<li><b>ByteDance</b> &mdash; Commercial AI-AIGC, China Commercialization &amp; Advertising. <b>Creative-Material Agent Lead</b> (AIGC Algorithm Engineer). <i>Nov 2025 &ndash; Present</i></li>
+<li><b>Honor Device Co., Ltd.</b> &mdash; LLM Capability Platform. <b>Lead, Multimodal Understanding &amp; Generation Group</b>, managing a team of 10+ engineers. <i>Apr 2024 &ndash; Oct 2025</i></li>
+<li><b>Shanghai AI Laboratory</b> &mdash; General Vision Group. <b>Research Intern</b>. <i>Mar 2022 &ndash; Dec 2023</i></li>
+</div>
 
-<h3>Workshops</h3>
-<li> <b >Student organizer</b>  of ECCV 2022 DeeperAction Challenge, <b> <a href='https://codalab.lisn.upsaclay.fr/competitions/4386'>Track 1: Temporal Action Localization</a>  </b>  </li>
-<li> <b >Student organizer</b>  of ICPR 2022 VideoPipe Challenge,    <b> <a href='https://codalab.lisn.upsaclay.fr/competitions/2284'>Track 2: Temporal Defect Localization</a>  </b> </li>
-<li> <b >Student organizer</b>  of ICCV 2021 DeeperAction Challenge, <b> <a href='https://competitions.codalab.org/competitions/32363'>Track 1: Temporal Action Localization</a> </b>  </li> 
-<li> <b >1st Prize</b> in ECCV 2022 Ego4D Episodic Memory Challenge, <b> <a href='https://ego4d-data.org/workshops/eccv22/'> Moments Queries Track </a>  </b>  </li>
-<li> <b >1st Prize</b> in ECCV 2022 Ego4D Episodic Memory Challenge, <b> <a href='https://ego4d-data.org/workshops/eccv22/'> Looking At Me Track </a>  </b> </li>
+<div class="paper">
+<h3>Honors &amp; Awards</h3>
+<h4 style="margin-top:0.7em;">Professional</h4>
+<li>2025 &mdash; Shining Star Award, Honor AI Platform Department</li>
+<li>2024 &mdash; AI Multimodal Breakthrough Team Award, Honor R&amp;D Management</li>
+<h4 style="margin-top:0.9em;">Ph.D. @ Chinese Academy of Sciences / UCAS</h4>
+<li>2023 &mdash; Outstanding Merit Student Pacesetter, UCAS</li>
+<li>2022 &mdash; <b>1st Place</b> (&times;2), ECCV Ego4D Episodic Memory Challenge &mdash; Looking At Me Track &amp; Moments Queries Track</li>
+<li>2020&ndash;2022 &mdash; President's Outstanding Award (&times;3), SIAT, Chinese Academy of Sciences</li>
+<li>2020 &mdash; Merit Student, UCAS</li>
+<li>2019 &mdash; First Prize, Huike Cup AI Application Innovation Challenge</li>
+<h4 style="margin-top:0.9em;">Undergraduate @ HUST</h4>
+<li>2019 &mdash; Outstanding Graduate, HUST</li>
+<li>2018 &mdash; National Second Prize &amp; Southern-Region Runner-up, ABU Robocon</li>
+<li>2018 &mdash; Provincial First Prize, National Mechanical Innovation Design Contest</li>
+<li>2017 &mdash; Provincial Second Prize, &ldquo;Challenge Cup&rdquo; National Student Academic Competition</li>
+<li>2017 &mdash; Provincial Second Prize, China Undergraduate Mathematical Contest in Modeling</li>
+<li>2017 &mdash; Meritorious Winner (Honorable Mention), Mathematical Contest in Modeling (MCM/ICM)</li>
+</div>
 
-<!-- <h3>Journal Reviewer</h3>
-<li>  Neural Networks, Journal of Visual Communication and Image Representation </li>
-<li>  Pattern Recognition, International Journal of Computer Vision  </li>
-<li>  IEEE Transactions on Pattern Analysis and Machine Intelligence  </li> -->
+<div class="paper">
+<h3>Workshops &amp; Challenges</h3>
+<li><b>Student organizer</b> of ECCV 2022 DeeperAction Challenge, <b><a href='https://codalab.lisn.upsaclay.fr/competitions/4386'>Track 1: Temporal Action Localization</a></b></li>
+<li><b>Student organizer</b> of ICPR 2022 VideoPipe Challenge, <b><a href='https://codalab.lisn.upsaclay.fr/competitions/2284'>Track 2: Temporal Defect Localization</a></b></li>
+<li><b>Student organizer</b> of ICCV 2021 DeeperAction Challenge, <b><a href='https://competitions.codalab.org/competitions/32363'>Track 1: Temporal Action Localization</a></b></li>
+</div>
 
 </div>
 </div>
-</div>	
 
 </body>
 </html>
